@@ -36,12 +36,12 @@ public class Manga implements Comparable<Manga> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Manga manga = (Manga) o;
-        return Double.compare(manga.preco, preco) == 0 && Objects.equals(id, manga.id) && Objects.equals(nome, manga.nome);
+        return Objects.equals(id, manga.id) && Objects.equals(nome, manga.nome);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, preco);
+        return Objects.hash(id, nome);
     }
 
     // vai retornar um inteiro e você tem acesso ao this que é quem está executando ele e o outro objeto passado como referência
